@@ -373,6 +373,17 @@ input[type="submit"] {
         background: #fff;
         animation: bounceIn 0.8s forwards;
         overflow-y: auto;
+        #exit_expanded {
+            border: 0;
+            background-color: #e9e9e9;
+            background-image: url(../assets/icons/return.svg);
+            background-repeat: no-repeat;
+            background-position: 10px center;
+            background-size: 20px;
+            padding: 15px 25px 15px 40px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
         #preview {
             width: 100%;
             height: 40vh;
@@ -558,11 +569,22 @@ input[type="submit"] {
         box-sizing: border-box;
         #expanded_meal_view {
             width: 100%;
-            padding: 0 $doc_mobile_padding;
+            padding: $doc_mobile_padding;
             box-sizing: border-box;
+            top: 0;
+            #meal_details {
+                padding: 20px 0;
+                #popup_title {
+                    font-size: 1.5rem;
+                }
+                h5 {
+                    font-size: 0.9rem;
+                    margin-top: 5px;
+                }
             #meal_content_grid {
-                grid-template-columns: 1fr auto;
+                grid-template-columns: 1fr;
             }
+        }
         }
     }
 }
@@ -622,8 +644,11 @@ input[type="submit"] {
     }
     
     /* Order Page */
-    #order_grid {
+    #order_header {
         padding: 20px $doc_mobile_padding;
+    }
+    #order_grid {
+        padding: 0 $doc_mobile_padding;
         grid-template-columns: 1fr;
     }
 

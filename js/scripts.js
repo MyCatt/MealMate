@@ -3,9 +3,10 @@ const mealPopupUnderlay = document.getElementById("expanded_underlay") || undefi
 const mealList = document.getElementById("order_grid") || undefined
 const hamburger = document.getElementById("hamburger") || undefined
 const primaryMenu = document.getElementById("primary_menu") || undefined
+const exitExpanded = document.getElementById("exit_expanded") || undefined
 
 hamburger.addEventListener('click', e => {
-    primaryMenu.style.display = primaryMenu.style.display == "none" ? "inline-block" : "none"
+    primaryMenu.style.display = primaryMenu.style.display == "inline-block" ? "none" : "inline-block"
 })
 
 const menu = {
@@ -20,6 +21,10 @@ const menu = {
 }
 
 if(mealPopupUnderlay && mealPopup) {
+
+    exitExpanded.addEventListener('click', e => {
+        mealPopup.style.display = "none"
+    })
 
     Object.keys(menu.meals).map((key, index) => {
         const components = menu.meals[index]
@@ -55,5 +60,5 @@ const initiatePopup = id => {
     popupTitle.innerText = menu.meals[id].name
     popupPreview.style.backgroundImage = `url(${menu.meals[id].thumb})`
     mealPopup.style.display = "inline-block"
-        
+    window.scrollTo(0, 0)
 }
