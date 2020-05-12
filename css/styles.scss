@@ -9,6 +9,10 @@ $doc_padding: 20vw;
 $doc_mid_padding: 10vw;
 $doc_mobile_padding: 20px;
 
+html {
+    touch-action: manipulation;
+}
+
 body {
     width: 100vw;
     padding: 0;
@@ -564,12 +568,18 @@ input[type="submit"] {
 }
 
 @media only screen and (max-width: 650px) {
+
+    #banner_content {
+        padding: 0 $doc_mobile_padding;
+    }
     /* Home Page */
     #home-content {
-        padding: 25px $doc_mobile_padding;
+        padding: 15px $doc_mobile_padding;
         .aligned_article {
             grid-gap: 40px;
             grid-template-columns: 1fr;
+            padding: 0;
+            margin-top: 25px;
             .article_thumbnail {
                 width: 100%;
                 height: auto;
@@ -615,6 +625,10 @@ input[type="submit"] {
     #order_grid {
         padding: 20px $doc_mobile_padding;
         grid-template-columns: 1fr;
+    }
+
+    input, textarea {
+        width: 100%;
     }
 }
 
