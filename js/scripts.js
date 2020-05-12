@@ -12,11 +12,11 @@ hamburger.addEventListener('click', e => {
 const menu = {
     size: 5,
     meals: {
-        0: {name: "Chicken salad with carrots and cucumber", thumb: "assets/cards/1.jpg"},
-        1: {name: "Creamy pumpkin and chicken soup", thumb: "assets/cards/2.jpg"},
-        2: {name: "Fresh salad with watermelon", thumb: "assets/cards/3.jpg"},
-        3: {name: "Blueberry pancakes served with a juice box", thumb: "assets/cards/4.jpg"},
-        4: {name: "Salted Salmon with salad", thumb: "assets/cards/5.jpg"}
+        0: {name: "Chicken salad with carrots and cucumber", thumb: "assets/cards/thumb/1.jpg"},
+        1: {name: "Creamy pumpkin and chicken soup", thumb: "assets/cards/thumb/2.jpg"},
+        2: {name: "Fresh salad with watermelon", thumb: "assets/cards/thumb/3.jpg"},
+        3: {name: "Blueberry pancakes served with a juice box", thumb: "assets/cards/thumb/4.jpg"},
+        4: {name: "Salted Salmon with salad", thumb: "assets/cards/thumb/5.jpg"}
     }
 }
 
