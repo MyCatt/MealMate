@@ -1,0 +1,115 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Michael Catterall</title>
+  <meta name="description" content="An HTML template for quick templating.">
+  <meta name="author" content="Michael Catterall">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.min.css?v=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <nav id="primary_navigation">
+        <a href="index.html"><img src="assets/logo2x.png" id="logo"></a>
+        <ul id="primary_menu">
+            <a href="index.html"><li class="active">Home</li></a>
+            <a href="order.html"><li>Order</li></a>
+            <a href="index.html#home-contact-form"><li>Support</li></a>
+            <li>Account</li>
+        </ul>
+        <img src="assets/icons/burger.svg" id="hamburger"/>
+    </nav>
+    <section class="banner home">
+        <div id="centered_banner">
+            <div id="banner_content">
+                <h1>No more hungry kids!</h1>
+                <h4>Mealmate supplies nutritious kai to kiwi kids all around the country.</h4>
+                <button id="banner_btn">Order now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="home-content">
+        <article class="aligned_article left">
+            <img src="assets/beehive_cover.jpg" class="article_thumbnail left">
+            <div class="article_content_wrap left">
+                <div class="article_content">
+                        <h2 class="article_title">Government subsidised</h2>
+                        <p class="article_desc">It is a long established fact that a reader will be distracted by the 
+                            readable content of a page when looking at its layout. The point of 
+                            using Lorem Ipsum is that it has a more-or-less normal distribution 
+                            of letters, as opposed to using 'Content here, content here', making 
+                            it look like readable English.</p>
+                    </div>
+            </div>
+        </article>
+        <article class="aligned_article">
+            <img src="assets/ingredients_cover.jpg" class="article_thumbnail right">
+            <div class="article_content_wrap right">
+                <div class="article_content">
+                    <h2 class="article_title">Yummy, healthy ingredients</h2>
+                    <p class="article_desc">It is a long established fact that a reader will be distracted by the 
+                        readable content of a page when looking at its layout. The point of 
+                        using Lorem Ipsum is that it has a more-or-less normal distribution 
+                        of letters, as opposed to using 'Content here, content here', making 
+                        it look like readable English.</p>
+                </div>
+            </div>
+        </article>
+        <article class="aligned_article left">
+            <img src="assets/leader.jpg" class="article_thumbnail left">
+            <div class="article_content_wrap left">
+                <div class="article_content">
+                    <h2 class="article_title">Supporting future leaders</h2>
+                    <p class="article_desc">It is a long established fact that a reader will be distracted by the 
+                        readable content of a page when looking at its layout. The point of 
+                        using Lorem Ipsum is that it has a more-or-less normal distribution 
+                        of letters, as opposed to using 'Content here, content here', making 
+                        it look like readable English.</p>
+                </div>
+            </div>
+        </article>
+    </section>
+
+    <section id="statistics">
+        <div id="stat_underlay"></div>
+        <div class="stat_item">
+            <img src="assets/icons/meals.svg">
+            <h5>10,000+ meals made</h5>
+        </div>
+        <div class="stat_item">
+            <img src="assets/icons/menu.svg">
+            <h5>New menu every week</h5>
+        </div>
+        <div class="stat_item">
+            <img src="assets/icons/school.svg">
+            <h5>27 registered schools</h5>
+        </div>
+        <div class="stat_item">
+            <img src="assets/icons/local_caterer.svg">
+            <h5>100+ Local Caterers</h5>
+        </div>
+    </section>
+
+    <section id="home-contact-form">
+        <form onsubmit="e => e.preventDefault;">
+            <h3>Contact Us!</h3>
+            <label for="contact_form-name">Contact Name</label>
+            <input type="text" placeholder="John Doe..." id="contact_form-name">
+            <label for="contact_form-email">Contact Email</label>
+            <input type="email" placeholder="example@email.com" id="contact_form-email">
+            <label for="contact_form-school">School</label>
+            <input type="text" placeholder="Vauxhall Primary" id="contact_form-school">
+            <label for="contact_form-message">Message</label>
+            <textarea id="contact_form-message"></textarea><br/>
+            <input type="submit" value="Send" class="right_arrow">
+        </form>
+        <div id="contact_form_art">
+
+        </div>
+    </section>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Michael Catterall</title>
+  <meta name="description" content="An HTML template for quick templating.">
+  <meta name="author" content="Michael Catterall">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.min.css?v=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <nav id="primary_navigation">
+        <a href="index.html"><img src="assets/logo2x.png" id="logo"></a>
+        <ul id="primary_menu">
+            <a href="index.html"><li class="active">Home</li></a>
+            <a href="order.html"><li>Order</li></a>
+            <a href="index.html#home-contact-form"><li>Support</li></a>
+            <li>Account</li>
+        </ul>
+        <img src="assets/icons/burger.svg" id="hamburger"/>
+    </nav>
+    <section id="order_header">
+        <h1>Pelase pick a meal option</h1>
+        <p>Order selection closes in 3 days</p>
+    </section>
+    <section id="order_grid">
+        <div id="order_date_card">
+            <div id="order_date_content">
+                <div id="date_Wrap">
+                    <h2>Monday 11 - <br>Friday 15 May</h2>
+                    <button id="date_switch">Change Date</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="expanded_meal">
+        <div id="expanded_underlay"></div>
+        <div id="expanded_meal_view">
+            <div id="preview"></div>
+            <div id="meal_details">
+                <h2 id="popup_title">Big Mac Combo</h3>
+                <h5>4/5 Health Rating</h5>
+                <div id="meal_content_grid">
+                    <div id="meal_desc">
+                        <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+                    </div>
+                    <div id="meal_ingredients">
+                        <h4>Ingredients</h4>
+                        <ul>
+                            <li>1 Apple</li>
+                            <li>200g Rice</li>
+                            <li>Boneless Chicken</li>
+                        </ul>
+                    </div>
+                </div>
+                <button id="add_btn">You need to login to do this!</button>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
