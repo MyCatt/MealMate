@@ -16,7 +16,10 @@ const menu = {
         1: {name: "Creamy pumpkin and chicken soup", thumb: "assets/cards/thumb/2.jpg"},
         2: {name: "Fresh salad with watermelon", thumb: "assets/cards/thumb/3.jpg"},
         3: {name: "Blueberry pancakes served with a juice box", thumb: "assets/cards/thumb/4.jpg"},
-        4: {name: "Salted Salmon with salad", thumb: "assets/cards/thumb/5.jpg"}
+        4: {name: "Salted Salmon with salad", thumb: "assets/cards/thumb/5.jpg"},
+        5: {name: "Big mac combo hold the lettuce", thumb: "assets/cards/thumb/6.jpg"},
+        6: {name: "Chicken nuggets with fried cat", thumb: "assets/cards/thumb/7.jpg"},
+        7: {name: "Spongebob sandwich", thumb: "assets/cards/thumb/8.jpg"}
     }
 }
 
