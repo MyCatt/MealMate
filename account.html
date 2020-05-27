@@ -1,0 +1,71 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Michael Catterall</title>
+  <meta name="description" content="An HTML template for quick templating.">
+  <meta name="author" content="Michael Catterall">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.min.css?v=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <nav id="primary_navigation">
+        <a href="index.html"><img src="assets/logo2x.png" id="logo"></a>
+        <ul id="primary_menu">
+            <a href="index.html"><li>Home</li></a>
+            <a href="order.html"><li>Order</li></a>
+            <a href="index.html#home-contact-form"><li>Support</li></a>
+            <li class="active">Account</li>
+            <li id="primary_menu--cart"><img id="cart_btn" src="./assets/icons/cart.svg">My Cart</li>
+        </ul>
+        <img src="assets/icons/burger.svg" id="hamburger"/>
+    </nav>
+
+    <section id="account-form">
+        <form onsubmit="e => e.preventDefault;">
+            <h1>Account Settings</h1>
+
+            <hr>
+            <h3>Student</h3>
+            <label for="contact_form-name">First Name</label>
+            <input type="text" value="Michael" id="contact_form-name">
+
+            <label for="contact_form-email">Last Name</label>
+            <input type="email" value="Catterall" id="contact_form-email">
+
+            <label for="contact_form-school">Email</label>
+            <input type="email" value="hey@michaelcatterall.co.nz" id="contact_form-school">
+
+            <label for="contact_form-school">School</label>
+            <input type="text" value="Takapuna Grammar School" id="contact_form-school">
+            <hr>
+            <h3>Legal Guardian</h3>
+
+            <label for="contact_form-name">First Name</label>
+            <input type="text" value="Michael" id="contact_form-name">
+
+            <label for="contact_form-email">Last Name</label>
+            <input type="email" value="Catterall" id="contact_form-email">
+
+            <label for="contact_form-school">Email</label>
+            <input type="email" value="hey@michaelcatterall.co.nz" id="contact_form-school">
+
+            <label for="contact_form-school">Contact Number</label>
+            <input type="phone" value="0220665816" id="contact_form-school">
+
+            <hr>
+            <h3>Dietry Requirement</h3>
+
+            <label for="contact_form-message">Requirement/Restrictions</label>
+            <textarea id="contact_form-message"></textarea><br/>
+
+            <button id="save_details">Save</button>
+
+        </form>
+    </section>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
