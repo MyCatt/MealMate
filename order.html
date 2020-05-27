@@ -18,6 +18,7 @@
             <a href="order.html"><li>Order</li></a>
             <a href="index.html#home-contact-form"><li>Support</li></a>
             <li>Account</li>
+            <li id="primary_menu--cart"><img id="cart_btn" src="./assets/icons/cart.svg">My Cart</li>
         </ul>
         <img src="assets/icons/burger.svg" id="hamburger"/>
     </nav>
@@ -31,8 +32,8 @@
                 <div id="date_Wrap">
                     <h2>Monday 11 - <br>Friday 15 May</h2>
                     <div id="date_buttons">
-                        <button id="date_switch">Next Week</button>
                         <button id="date_switch">Prev. Week</button>
+                        <button id="date_switch">Next Week</button>
                     </div>
                 </div>
             </div>
@@ -59,11 +60,21 @@
                         </ul>
                     </div>
                 </div>
-                <button id="add_btn">Add to cart</button>
+                <div id="date_select_wrap">
+                    <select id="day_select">
+                        <option>Monday</option>
+                        <option>Tuesday</option>
+                        <option>Wednesday</option>
+                        <option>Thursday</option>
+                        <option>Friday</option>
+                    </select>
+                    <button id="add_btn">Add to cart</button>
+                </div>
             </div>
         </div>
     </div>
     <div id="cart">
+        <button id="exit_cart">Close Cart</button>
         <h2>Your Cart</h2>
         <h3>Monday 11 - Friday 15 May</h3>
         <div id="item-wrap">
@@ -80,6 +91,7 @@
                 <button>Edit</button>
             </div>
         </div>
+        <button id="checkout">Checkout</button>
     </div>
     <script src="js/scripts.js"></script>
 </body>

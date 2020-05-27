@@ -79,13 +79,14 @@ input[type="submit"] {
     background: #fff;
     box-sizing: border-box;
     border-bottom: 1px solid #f3f3f3;
-    padding: 20px $doc_padding;
+    padding: 0 $doc_padding;
     display: inline-grid;
     justify-content: space-between;
     z-index: 10;
     #logo {
         height: 40px;
         grid-column: 1;
+        padding: 20px 0;
     }
     #primary_menu {
         list-style: none;
@@ -95,9 +96,28 @@ input[type="submit"] {
             display: inline-block;
             font-size: 1rem;
             margin-left: 10px;
+            padding: 20px 0;
             &.active {
                 color: $primary;
                 font-weight: bold;
+            }
+            &#primary_menu--cart {
+                background: #fff;
+                border: 1px solid #f3f3f3;
+                padding: 10px 15px;
+                font-size: 1rem;
+                border-radius: 40px;
+                line-height: 20px;
+                -webkit-box-shadow: -7px 0px 48px 6px rgba(0,0,0,0.05);
+                -moz-box-shadow: -7px 0px 48px 6px rgba(0,0,0,0.05);
+                box-shadow: -7px 0px 48px 6px rgba(0,0,0,0.05);
+                box-sizing: border-box;
+                cursor: pointer;
+                #cart_btn {
+                    float: left;
+                    margin-right: 5px;
+                    height: 20px;
+                }
             }
         }
     }
@@ -334,8 +354,14 @@ input[type="submit"] {
         cursor: pointer;
         width: auto;
         overflow: hidden;
-        transform: scale(1);
+        transform: scale(0);
         transition: 0.2s transform;
+        animation: 0.4s forwards bounceRender;
+        @for $i from 1 through 9{
+            &:nth-child(#{$i}){
+              animation-delay: $i * 100ms;
+            }
+          }
         &:hover {
             transform: scale(1.1);
         }
@@ -353,6 +379,14 @@ input[type="submit"] {
             font-size: 1.25rem;
             margin: 10px 0 0 0;
         }
+    }
+}
+
+@keyframes bounceRender {
+    from {
+        transform: scale(0);
+    } to {
+        transform: scale(1);
     }
 }
 
@@ -382,7 +416,7 @@ input[type="submit"] {
         width: 50%;
         z-index: 11;
         background: #fff;
-        animation: bounceIn 0.8s forwards;
+        animation: bounceIn 0.5s forwards;
         overflow-y: auto;
         #exit_expanded {
             border: 0;
@@ -414,15 +448,24 @@ input[type="submit"] {
                 margin: 0;
                 font-size: 1.3rem;
             }
-            #add_btn {
-                background: $primary;
-                color: #fff;
-                border: 0;
-                padding: 15px 20px;
-                border-radius: 5px;
-                font-weight: bold;
+            #date_select_wrap {
                 margin-top: 50px;
-                cursor: pointer;
+                display: inline-grid;
+                grid-template-columns: 1fr 1fr;
+                #day_select {
+                    background: #f3f3f3;
+                    color: #000;
+                    border: 0;
+                    padding: 15px 20px;
+                    cursor: pointer;
+                }
+                #add_btn {
+                    background: $primary;
+                    color: #fff;
+                    border: 0;
+                    padding: 15px 20px;
+                    cursor: pointer;
+                }
             }
             #meal_content_grid {
                 display: inline-grid;
@@ -475,12 +518,25 @@ input[type="submit"] {
     height: 100vh;
     background: #fff;
     box-sizing: border-box;
-    padding: 50px 25px;
+    padding: 25px;
     z-index: 10;
     border-left: 1px solid #f3f3f3;
     -webkit-box-shadow: -7px 0px 48px 6px rgba(0,0,0,0.05);
     -moz-box-shadow: -7px 0px 48px 6px rgba(0,0,0,0.05);
     box-shadow: -7px 0px 48px 6px rgba(0,0,0,0.05);
+    animation: slideIn 0.5s forwards;
+    #exit_cart {
+        border: 0;
+        background-color: #f3f3f3;
+        background-image: url(../assets/icons/return.svg);
+        background-repeat: no-repeat;
+        background-position: 10px center;
+        background-size: 20px;
+        padding: 15px 25px 15px 40px;
+        border-radius: 5px;
+        margin: 0 0 25px 0;
+        cursor: pointer;
+    }
     h2 {
         margin: 0;
     }
@@ -495,22 +551,44 @@ input[type="submit"] {
             p {
                 margin: 0;
                 color: $primary;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
                 font-weight: bold;
             }
             h4 {
                 margin: 0;
                 font-weight: normal;
-                font-size: 1.2rem;
+                font-size: 1.1rem;
+                margin-bottom: 10px;
             }
             button {
                 border: 0;
                 background: #f3f3f3;
                 padding: 10px 15px;
-                border-radius: 25px;
+                border-radius: 4px;
                 cursor: pointer;
             }
         }
+    }
+    #checkout {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        padding: 15px 25px;
+        width: calc(100% - 40px);
+        background: $primary;
+        box-sizing: border-box;
+        border-radius: 4px;
+        border: 0;
+        color: #fff;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(300px);
+    }
+    to {
+        transform: translateX(0px);
     }
 }
 
@@ -541,9 +619,9 @@ input[type="submit"] {
     }
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 2200px) {
     #primary_navigation{
-        padding: 20px $doc_mid_padding;
+        padding: 0 $doc_mid_padding;
     } 
 
     /* Home Page */
@@ -567,9 +645,12 @@ input[type="submit"] {
         padding: 0 $doc_mid_padding;
         box-sizing: border-box;
         #expanded_meal_view {
-            width: 100%;
+            width: 80%;
             padding: 0 $doc_mid_padding;
             box-sizing: border-box;
+            #meal_details {
+                padding: 50px 0;
+            }
             #meal_content_grid {
                 grid-template-columns: 1fr auto;
             }
@@ -577,16 +658,16 @@ input[type="submit"] {
     }
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1100px) {
     #order_grid {
-        padding: 20px $doc_mid_padding;
+        padding: 0px $doc_mid_padding;
         grid-template-columns: 1fr 1fr 1fr;
     }
 }
 
 @media only screen and (max-width: 800px) {
     #primary_navigation{
-        padding: 20px $doc_mobile_padding;
+        padding: 0px $doc_mobile_padding;
         #primary_menu {
             display: none;
             position: fixed;

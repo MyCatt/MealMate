@@ -4,6 +4,9 @@ const mealList = document.getElementById("order_grid") || undefined
 const hamburger = document.getElementById("hamburger") || undefined
 const primaryMenu = document.getElementById("primary_menu") || undefined
 const exitExpanded = document.getElementById("exit_expanded") || undefined
+const exitCart = document.getElementById("exit_cart") || undefined
+const cart = document.getElementById("cart") || undefined
+const openCart = document.getElementById("primary_menu--cart") || undefined
 
 hamburger.addEventListener('click', e => {
     primaryMenu.style.display = primaryMenu.style.display == "inline-block" ? "none" : "inline-block"
@@ -53,6 +56,14 @@ if(mealPopupUnderlay && mealPopup) {
         if(mealPopup.style.display != "none") {
             mealPopup.style.display = "none"
         }
+    })
+
+    openCart.addEventListener('click', () => {
+        cart.style.display = "inline-block"
+    })
+
+    exitCart.addEventListener('click', () => {
+        cart.style.display = "none"
     })
 
 }
