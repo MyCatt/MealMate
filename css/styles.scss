@@ -321,6 +321,7 @@ input[type="submit"] {
         font-size: 1.15rem;
     }
 }
+
 #order_grid {
     display: inline-grid;
     grid-gap: 30px;
@@ -360,6 +361,13 @@ input[type="submit"] {
             }
         }
     }
+    &.order_from {
+        .order_card {
+            .meal_date { 
+                display: none;
+        }
+    }
+}   
     .order_card {
         cursor: pointer;
         width: auto;
