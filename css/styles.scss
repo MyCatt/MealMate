@@ -302,6 +302,13 @@ input[type="submit"] {
     box-sizing: border-box;
     width: 100%;
     padding: 50px $doc_padding 0;
+    #confirm_order {
+        background: $primary;
+        padding: 10px 15px;
+        border-radius: 4px;
+        border: 0;
+        color: #fff;
+    }
     h1 {
         font-size: 1.6rem;
         margin: 0;
