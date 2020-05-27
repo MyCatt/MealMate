@@ -5,6 +5,7 @@
 */
 
 $primary: #6ABC6A;
+$secondry: #67C99F;
 $primary_opaque: hsla(120, 38%, 58%, 0.9);
 $doc_padding: 20vw;
 $doc_mid_plus_padding: 15vw;
@@ -305,10 +306,11 @@ input[type="submit"] {
     padding: 50px $doc_padding 0;
     #confirm_order {
         background: $primary;
-        padding: 10px 15px;
-        border-radius: 4px;
+        padding: 10px 25px;
+        border-radius: 5px;
         border: 0;
         color: #fff;
+        font-size: 1rem;
     }
     h1 {
         font-size: 1.6rem;
@@ -378,7 +380,7 @@ input[type="submit"] {
             top: 0;
             left: 0;
             border-radius: 0px;
-            background: $primary;
+            background: $secondry;
             color: #fff;
             padding: 10px 30px;
             font-size: 1rem;
@@ -409,6 +411,10 @@ input[type="submit"] {
     } to {
         transform: scale(1);
     }
+}
+
+#mobile_cart_btn { 
+    display: none;
 }
 
 #expanded_meal {
@@ -767,6 +773,19 @@ input[type="submit"] {
 }
 
 @media only screen and (max-width: 800px) {
+    #mobile_cart_btn {
+        display: block;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 40px;
+        font-size: 1rem;
+        border: 0;
+        margin: 0;
+        background: $primary;
+        color: #fff;
+    }
     #primary_navigation{
         padding: 0px $doc_mobile_padding;
         #primary_menu {

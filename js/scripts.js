@@ -6,6 +6,7 @@ const primaryMenu = document.getElementById("primary_menu") || undefined
 const exitExpanded = document.getElementById("exit_expanded") || undefined
 const exitCart = document.getElementById("exit_cart") || undefined
 const cart = document.getElementById("cart") || undefined
+const mobileOpenCart = document.getElementById('mobile_cart_btn') || undefined
 const openCart = document.getElementById("primary_menu--cart") || undefined
 const confirmOrder = document.getElementById("confirm_order") || undefined
 const order_confirmation_wrap = document.getElementById("order_confirmation_wrap") || undefined
@@ -61,27 +62,34 @@ if(mealPopupUnderlay && mealPopup) {
         })
     })
 
-    confirmOrder.addEventListener('click', () => {
-        order_confirmation_wrap.style.display = "table"
-    })
-
-    reviewOrder.addEventListener('click', () => {
-        order_confirmation_wrap.style.display = "none"
-    })
-
     mealPopupUnderlay.addEventListener('click', e => {
         if(mealPopup.style.display != "none") {
             mealPopup.style.display = "none"
         }
     })
 
-    openCart.addEventListener('click', () => {
-        cart.style.display = "inline-block"
-    })
 
-    exitCart.addEventListener('click', () => {
-        cart.style.display = "none"
-    })
+    if(confirmOrder) {
+        confirmOrder.addEventListener('click', () => {
+            order_confirmation_wrap.style.display = "table"
+        })
+
+        reviewOrder.addEventListener('click', () => {
+            order_confirmation_wrap.style.display = "none"
+        })
+    }else {
+        openCart.addEventListener('click', () => {
+            cart.style.display = "inline-block"
+        })
+    
+        exitCart.addEventListener('click', () => {
+            cart.style.display = "none"
+        })
+    
+        mobileOpenCart.addEventListener('click', () => {
+            cart.style.display = "inline-block"
+        })
+    }
 
 }
 
