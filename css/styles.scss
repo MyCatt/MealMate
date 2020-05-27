@@ -711,7 +711,7 @@ input[type="submit"] {
 #account-form {
     display: inline-grid;
     width: 100%;
-    padding: 100px 0;
+    padding: 50px 0;
     form {
         text-align: left;
         margin: 0 auto;
@@ -964,6 +964,17 @@ input[type="submit"] {
 
     input, textarea {
         width: 100%;
+    }
+
+    #account-form {
+        display: inline-grid;
+        width: 100%;
+        padding: 50px 0;
+        form {
+            text-align: left;
+            margin: 0 auto;
+            width: 80%;
+        }
     }
 }
 
