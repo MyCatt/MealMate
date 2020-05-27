@@ -7,6 +7,10 @@ const exitExpanded = document.getElementById("exit_expanded") || undefined
 const exitCart = document.getElementById("exit_cart") || undefined
 const cart = document.getElementById("cart") || undefined
 const openCart = document.getElementById("primary_menu--cart") || undefined
+const confirmOrder = document.getElementById("confirm_order") || undefined
+const order_confirmation_wrap = document.getElementById("order_confirmation_wrap") || undefined
+const reviewOrder = document.getElementById("review_order_btn") || undefined
+const day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
 hamburger.addEventListener('click', e => {
     primaryMenu.style.display = primaryMenu.style.display == "inline-block" ? "none" : "inline-block"
@@ -19,12 +23,13 @@ const menu = {
         1: {name: "Creamy pumpkin and chicken soup", thumb: "assets/cards/thumb/2.jpg"},
         2: {name: "Fresh salad with watermelon", thumb: "assets/cards/thumb/3.jpg"},
         3: {name: "Blueberry pancakes served with a juice box", thumb: "assets/cards/thumb/4.jpg"},
-        4: {name: "Salted Salmon with salad", thumb: "assets/cards/thumb/5.jpg"},
-        5: {name: "Big mac combo hold the lettuce", thumb: "assets/cards/thumb/6.jpg"},
-        6: {name: "Chicken nuggets with fried cat", thumb: "assets/cards/thumb/7.jpg"},
-        7: {name: "Spongebob sandwich", thumb: "assets/cards/thumb/8.jpg"}
+        4: {name: "Salted Salmon with salad", thumb: "assets/cards/thumb/5.jpg"}
     }
 }
+
+//        5: {name: "Big mac combo hold the lettuce", thumb: "assets/cards/thumb/6.jpg"},
+//        6: {name: "Chicken nuggets with fried cat", thumb: "assets/cards/thumb/7.jpg"},
+//        7: {name: "Spongebob sandwich", thumb: "assets/cards/thumb/8.jpg"}
 
 if(mealPopupUnderlay && mealPopup) {
 
@@ -42,6 +47,11 @@ if(mealPopupUnderlay && mealPopup) {
         const orderTitle = document.createElement('h5')
         orderTitle.innerText = components.name
 
+        const mealDate = document.createElement('h5')
+        mealDate.innerText = day[index]
+        mealDate.className = "meal_date"
+
+        orderCard.appendChild(mealDate)
         orderCard.appendChild(orderImg)
         orderCard.appendChild(orderTitle)
         mealList.appendChild(orderCard)
@@ -51,6 +61,13 @@ if(mealPopupUnderlay && mealPopup) {
         })
     })
 
+    confirmOrder.addEventListener('click', () => {
+        order_confirmation_wrap.style.display = "table"
+    })
+
+    reviewOrder.addEventListener('click', () => {
+        order_confirmation_wrap.style.display = "none"
+    })
 
     mealPopupUnderlay.addEventListener('click', e => {
         if(mealPopup.style.display != "none") {

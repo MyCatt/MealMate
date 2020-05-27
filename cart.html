@@ -14,7 +14,7 @@
     <nav id="primary_navigation">
         <a href="index.html"><img src="assets/logo2x.png" id="logo"></a>
         <ul id="primary_menu">
-            <a href="index.html"><li class="active">Home</li></a>
+            <a href="index.html"><li>Home</li></a>
             <a href="order.html"><li>Order</li></a>
             <a href="index.html#home-contact-form"><li>Support</li></a>
             <li>Account</li>
@@ -22,12 +22,26 @@
         </ul>
         <img src="assets/icons/burger.svg" id="hamburger"/>
     </nav>
+    <div id="order_confirmation_wrap">
+        <div id="order_confirmation">
+            <div id="confirmation">
+                <img id="choice-img" src="./assets/choice.png"/>
+                <div id="confirm_text">
+                    <h1>ALL DONE, DUDE!</h1>
+                    <p>Those meals are locked in and will 
+                        be delivered to you from 4th may to
+                        9th may.</p>
+                    <button id="review_order_btn">Review Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <section id="order_header">
         <h1>Double check your order!</h1>
         <p>Please check that your order is correct for the period Monday 11 - Friday 15 May.</p>
         <button id="confirm_order">Looks good, confirm please!</button>
     </section>
-    <section id="order_grid">
+    <section id="order_grid" class="confirm">
     </section>
     <div id="expanded_meal">
         <div id="expanded_underlay"></div>
@@ -58,8 +72,9 @@
                         <option>Thursday</option>
                         <option>Friday</option>
                     </select>
-                    <button id="add_btn">Add to cart</button>
+                    <button id="add_btn">Switch Day</button>
                 </div>
+                    <button id="remove_btn">Remove</button>
             </div>
         </div>
     </div>
