@@ -8,6 +8,7 @@ const exitCart = document.getElementById("exit_cart") || undefined
 const cart = document.getElementById("cart") || undefined
 const mobileOpenCart = document.getElementById('mobile_cart_btn') || undefined
 const openCart = document.getElementById("primary_menu--cart") || undefined
+const addCart = document.getElementById("add_btn") || undefined
 const confirmOrder = document.getElementById("confirm_order") || undefined
 const order_confirmation_wrap = document.getElementById("order_confirmation_wrap") || undefined
 const reviewOrder = document.getElementById("review_order_btn") || undefined
@@ -78,6 +79,10 @@ if(mealPopupUnderlay && mealPopup) {
             order_confirmation_wrap.style.display = "none"
         })
     }else {
+        addCart.addEventListener('click', () => {
+            cart.style.display = "inline-block"
+            mealPopup.style.display = "none"
+        })
         openCart.addEventListener('click', () => {
             cart.style.display = "inline-block"
         })
