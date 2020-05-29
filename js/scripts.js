@@ -203,7 +203,7 @@ if(document.getElementById('manage-history')) {  //Manage order history page
         for(let i = 0; i < quantity; i++) {
             const order_number = Math.floor(Math.random() * 10000000)
             const random_student = mockData.names[Math.floor(Math.random() * 40)] + " " + mockData.names[Math.floor(Math.random() * 40)]
-            const random_date = new Date(+(new Date()) - Math.floor(Math.random()*10000000000))
+            const random_date = new Date(+(new Date()) - Math.floor(Math.random()*10000000000)).toLocaleDateString()
 
             const row = document.createElement('tr')
                 const order_row = document.createElement('td')
