@@ -132,6 +132,107 @@ input[type="submit"] {
     }
 }
 
+#show_menu {
+    display: none;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    padding: 10px 15px;
+    background: $primary;
+    color: #fff;
+    border: 0;
+    border-bottom-right-radius: 5px;
+}
+
+#management {
+    background: #f7f7f7;
+    display: inline-grid;
+    grid-template-columns: 300px 1fr;
+    height: 100vh;
+    width: 100%;
+    #side_navigation {
+        background: #fff;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        padding: 25px;
+        #hamburger {
+            display: none;
+        }
+        #logo {
+            width: 200px;
+        }
+        #primary_manage_menu {
+            list-style: none;
+            padding: 0;
+            font-size: 1rem;
+            li {
+                padding: 10px 0;
+            }
+        }
+    }
+
+    #main_content {
+        width: 100%;
+        height: 100%;
+        padding: 25px;
+        box-sizing: border-box;
+        #student_list {
+            background: #fff;
+            border-radius: 4px;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+            #smart_filter {
+                width: 100%;
+                display: grid;
+                text-align: left;
+                justify-content: space-between;
+                grid-template-columns: 400px 150px;
+                #large_text_search {
+                    border: 0;
+                    background: #f7f7f7;
+                    padding: 15px;
+                    box-sizing: border-box;
+                    height: 50px;
+                }
+                button {
+                    height: 50px;
+                    box-sizing: border-box;
+                    padding: 10px 15px;
+                    border: 0;
+                    background: $primary;
+                    color: #fff;
+                    border-radius: 4px;
+                }
+            }
+            #table_wrap {
+                max-width: 100%;
+                overflow-x: auto;
+            #list_table {
+                width: 100%;
+                text-align: left;
+                border-spacing: 0;
+                tr {
+                    font-size: 1rem;
+                    height: 50px;
+                    &:nth-child(odd) {
+                        background: #f3f3f3;
+                    }
+                    td, th {
+                        padding: 0 15px;
+                        text-align: left;
+                    }
+                }
+
+            }
+        }
+        }
+    }
+
+}
+
 .banner {
     width: 100%;
     height: 600px;
@@ -800,6 +901,37 @@ input[type="submit"] {
         padding: 0px $doc_mid_padding;
         grid-template-columns: 1fr 1fr 1fr;
     }
+    #show_menu {
+        display: inline-block;
+        z-index: 100000;
+    }
+    #management {
+        display: inline-block;
+        #student_list {
+            #smart_filter {
+                display: none;
+                grid-template-columns: 50% 1fr !important;
+                grid-gap: 10px;
+            }
+        }
+    }
+    #side_navigation {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 300px !important;
+        border-right: 1px solid #f3f3f3;
+        animation: slideOutSide 0.4s forwards;
+    }
+    @keyframes slideOutSide {
+        from {
+            left: -300px;
+        }
+        to {
+            left: 0;
+        }
+    }
 }
 
 @media only screen and (max-width: 800px) {
@@ -892,7 +1024,7 @@ input[type="submit"] {
                     margin-top: 5px;
                 }
             #meal_content_grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: auto auto !important;
             }
         }
         }

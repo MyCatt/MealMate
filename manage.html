@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Michael Catterall</title>
+  <meta name="description" content="An HTML template for quick templating.">
+  <meta name="author" content="Michael Catterall">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.min.css?v=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> 
+</head>
+<body>
+    <button id="show_menu">Menu</button>
+    <div id="management">
+        <nav id="side_navigation">
+            <a href="index.html"><img src="assets/logo2x.png" id="logo"></a>
+            <ul id="primary_manage_menu">
+                <li class="active">Students</li>
+                <li>Order History</li>
+                <li>Smart Track</li>
+                <li>Pipeline</li>
+            </ul>
+            <img src="assets/icons/burger.svg" id="hamburger"/>
+        </nav>
+        <main id="main_content">
+            <div id="student_list">
+                <div id="smart_filter">
+                    <input type="text" id="large_text_search" placeholder="Search name" value=""/>
+                    <button>Add Student</button>
+                </div>
+                <div id="table_wrap">
+                <table id="list_table">
+                    <tr>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Year</th>
+                        <th>Form Class</th>
+                        <th>Special Diet?</th>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>3</td>
+                        <td>3BD</td>
+                        <td>No</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>3</td>
+                        <td>3BD</td>
+                        <td>No</td>
+                      </tr>
+                </table>
+                 </div>
+            </div>
+        </main>
+    </div>  
+    <script src="js/scripts.js"></script>
+</body>
+</html>
