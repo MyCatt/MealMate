@@ -22,10 +22,6 @@ hamburger.addEventListener('click', e => {
     primaryMenu.style.display = primaryMenu.style.display == "inline-block" ? "none" : "inline-block"
 })
 
-sideMenuButton.addEventListener('click', () => {
-    sideMenu.style.display = sideMenu.style.display == "block" ? "none" : "block"
-})
-
 const menu = {
     size: 5,
     meals: {
@@ -106,65 +102,125 @@ if(mealPopupUnderlay && mealPopup) {
 
 }
 
-const searchTable = param => {
-    const trChildren = fillTable.getElementsByTagName("tr");
-    for (let i = 0; i < trChildren.length; i++) {
-        const tdChildren = trChildren[i].getElementsByTagName("td")[0];
-        if (tdChildren) {
-          const tdValue = tdChildren.textContent || tdChildren.innerText;
-          if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
-            trChildren[i].style.display = "";
-          } else {
-            trChildren[i].style.display = "none";
-          }
+if(document.getElementById('manage')) {  //Manage page
+
+    const searchTable = param => {
+        const trChildren = fillTable.getElementsByTagName("tr");
+        for (let i = 0; i < trChildren.length; i++) {
+            const tdChildren = trChildren[i].getElementsByTagName("td")[0];
+            if (tdChildren) {
+            const tdValue = tdChildren.textContent || tdChildren.innerText;
+            if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
+                trChildren[i].style.display = "";
+            } else {
+                trChildren[i].style.display = "none";
+            }
+            }
         }
-      }
-}
-
-largeTextSearch.addEventListener('keyup', e => {
-    searchTable(e.target.value)
-})
-
-const studentGenerator = quantity => {
-    const mockData = {
-        names: [
-            "Abril", "Abbiegayle", "Abilard", "Abad", "Andrew",
-            "Ben", "Bail", "Batya", "Beau", "Brian", "Bran",
-            "Cadwell", "Caleb", "Cole", "Cadmus", "Calix", "Cafall",
-            "Daily", "Dack", "Dabi", "Dalain", "Dahl", "Dalila",
-            "Jack", "Jadee", "Jadin", "Jadera", "Jocheim", "Joenes",
-            "Raffer", "Raff", "Radcliffe", "Radd", "Rania", "Rai",
-            "Tann", "Taras", "Tallie", "Takara", "Taina", "Tallulah"
-        ]
     }
-    for(let i = 0; i < quantity; i++) {
-        const random_f = Math.floor(Math.random() * 40)
-        const random_l = Math.floor(Math.random() * 40)
-        const random_year = Math.floor(Math.random() * 13) + 1
-        const random_diet = Math.floor(Math.random() * 2)
-        const randomChar = Math.floor(Math.random() * 26)
 
-        const row = document.createElement('tr')
-            const f_row = document.createElement('td')
-            f_row.innerText = mockData.names[random_f]
-            row.appendChild(f_row)
-            const l_row = document.createElement('td')
-            l_row.innerText = mockData.names[random_l]
-            row.appendChild(l_row)
-            const year_row = document.createElement('td')
-            year_row.innerText = random_year
-            row.appendChild(year_row)
-            const form_row = document.createElement('td')
-            form_row.innerText = random_year + 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.substring(randomChar, randomChar+1)
-            row.appendChild(form_row)
-            const diet_row = document.createElement('td')
-            diet_row.innerText = random_diet == 1 ? "Yes" : "No"
-            row.appendChild(diet_row)
+    sideMenuButton.addEventListener('click', () => {
+        sideMenu.style.display = sideMenu.style.display == "block" ? "none" : "block"
+    })
 
-        fillTable.appendChild(row)
+    largeTextSearch.addEventListener('keyup', e => {
+        searchTable(e.target.value)
+    })
+
+    const studentGenerator = quantity => {
+        const mockData = {
+            names: [
+                "Abril", "Abbiegayle", "Abilard", "Abad", "Andrew",
+                "Ben", "Bail", "Batya", "Beau", "Brian", "Bran",
+                "Cadwell", "Caleb", "Cole", "Cadmus", "Calix", "Cafall",
+                "Daily", "Dack", "Dabi", "Dalain", "Dahl", "Dalila",
+                "Jack", "Jadee", "Jadin", "Jadera", "Jocheim", "Joenes",
+                "Raffer", "Raff", "Radcliffe", "Radd", "Rania", "Rai",
+                "Tann", "Taras", "Tallie", "Takara", "Taina", "Tallulah"
+            ]
+        }
+        for(let i = 0; i < quantity; i++) {
+            const random_f = Math.floor(Math.random() * 40)
+            const random_l = Math.floor(Math.random() * 40)
+            const random_year = Math.floor(Math.random() * 13) + 1
+            const random_diet = Math.floor(Math.random() * 2)
+            const randomChar = Math.floor(Math.random() * 26)
+
+            const row = document.createElement('tr')
+                const f_row = document.createElement('td')
+                f_row.innerText = mockData.names[random_f]
+                row.appendChild(f_row)
+                const l_row = document.createElement('td')
+                l_row.innerText = mockData.names[random_l]
+                row.appendChild(l_row)
+                const year_row = document.createElement('td')
+                year_row.innerText = random_year
+                row.appendChild(year_row)
+                const form_row = document.createElement('td')
+                form_row.innerText = random_year + 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.substring(randomChar, randomChar+1)
+                row.appendChild(form_row)
+                const diet_row = document.createElement('td')
+                diet_row.innerText = random_diet == 1 ? "Yes" : "No"
+                row.appendChild(diet_row)
+
+            fillTable.appendChild(row)
+        }
     }
+    studentGenerator(100)
+
 }
-studentGenerator(100)
+if(document.getElementById('manage-history')) {  //Manage order history page
+    const searchTable = param => {
+        const trChildren = fillTable.getElementsByTagName("tr");
+        for (let i = 0; i < trChildren.length; i++) {
+            const tdChildren = trChildren[i].getElementsByTagName("td")[0];
+            if (tdChildren) {
+            const tdValue = tdChildren.textContent || tdChildren.innerText;
+            if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
+                trChildren[i].style.display = "";
+            } else {
+                trChildren[i].style.display = "none";
+            }
+            }
+        }
+    }
+    largeTextSearch.addEventListener('keyup', e => {
+        searchTable(e.target.value)
+    })
+
+    const orderGenerator = quantity => {
+        const mockData = {
+            names: [
+                "Abril", "Abbiegayle", "Abilard", "Abad", "Andrew",
+                "Ben", "Bail", "Batya", "Beau", "Brian", "Bran",
+                "Cadwell", "Caleb", "Cole", "Cadmus", "Calix", "Cafall",
+                "Daily", "Dack", "Dabi", "Dalain", "Dahl", "Dalila",
+                "Jack", "Jadee", "Jadin", "Jadera", "Jocheim", "Joenes",
+                "Raffer", "Raff", "Radcliffe", "Radd", "Rania", "Rai",
+                "Tann", "Taras", "Tallie", "Takara", "Taina", "Tallulah"
+            ]
+        }
+        for(let i = 0; i < quantity; i++) {
+            const order_number = Math.floor(Math.random() * 10000000)
+            const random_student = mockData.names[Math.floor(Math.random() * 40)] + " " + mockData.names[Math.floor(Math.random() * 40)]
+            const random_date = new Date(+(new Date()) - Math.floor(Math.random()*10000000000))
+
+            const row = document.createElement('tr')
+                const order_row = document.createElement('td')
+                order_row.innerText = order_number
+                row.appendChild(order_row)
+                const name_row = document.createElement('td')
+                name_row.innerText = random_student
+                row.appendChild(name_row)
+                const date_row = document.createElement('td')
+                date_row.innerText = random_date
+                row.appendChild(date_row)
+
+            fillTable.appendChild(row)
+        }
+    }
+    orderGenerator(100)
+}
 const popupTitle = document.getElementById("popup_title")
 const popupPreview = document.getElementById("preview")
 const initiatePopup = id => {
