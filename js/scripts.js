@@ -12,10 +12,18 @@ const addCart = document.getElementById("add_btn") || undefined
 const confirmOrder = document.getElementById("confirm_order") || undefined
 const order_confirmation_wrap = document.getElementById("order_confirmation_wrap") || undefined
 const reviewOrder = document.getElementById("review_order_btn") || undefined
+const largeTextSearch = document.getElementById('large_text_search') || undefined
+const fillTable = document.getElementById('list_table')
+const sideMenuButton = document.getElementById("show_menu") || undefined
+const sideMenu = document.getElementById("side_navigation") || undefined
 const day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
 hamburger.addEventListener('click', e => {
     primaryMenu.style.display = primaryMenu.style.display == "inline-block" ? "none" : "inline-block"
+})
+
+sideMenuButton.addEventListener('click', () => {
+    sideMenu.style.display = sideMenu.style.display == "block" ? "none" : "block"
 })
 
 const menu = {
@@ -98,6 +106,65 @@ if(mealPopupUnderlay && mealPopup) {
 
 }
 
+const searchTable = param => {
+    const trChildren = fillTable.getElementsByTagName("tr");
+    for (let i = 0; i < trChildren.length; i++) {
+        const tdChildren = trChildren[i].getElementsByTagName("td")[0];
+        if (tdChildren) {
+          const tdValue = tdChildren.textContent || tdChildren.innerText;
+          if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
+            trChildren[i].style.display = "";
+          } else {
+            trChildren[i].style.display = "none";
+          }
+        }
+      }
+}
+
+largeTextSearch.addEventListener('keyup', e => {
+    searchTable(e.target.value)
+})
+
+const studentGenerator = quantity => {
+    const mockData = {
+        names: [
+            "Abril", "Abbiegayle", "Abilard", "Abad", "Andrew",
+            "Ben", "Bail", "Batya", "Beau", "Brian", "Bran",
+            "Cadwell", "Caleb", "Cole", "Cadmus", "Calix", "Cafall",
+            "Daily", "Dack", "Dabi", "Dalain", "Dahl", "Dalila",
+            "Jack", "Jadee", "Jadin", "Jadera", "Jocheim", "Joenes",
+            "Raffer", "Raff", "Radcliffe", "Radd", "Rania", "Rai",
+            "Tann", "Taras", "Tallie", "Takara", "Taina", "Tallulah"
+        ]
+    }
+    for(let i = 0; i < quantity; i++) {
+        const random_f = Math.floor(Math.random() * 40)
+        const random_l = Math.floor(Math.random() * 40)
+        const random_year = Math.floor(Math.random() * 13) + 1
+        const random_diet = Math.floor(Math.random() * 2)
+        const randomChar = Math.floor(Math.random() * 26)
+
+        const row = document.createElement('tr')
+            const f_row = document.createElement('td')
+            f_row.innerText = mockData.names[random_f]
+            row.appendChild(f_row)
+            const l_row = document.createElement('td')
+            l_row.innerText = mockData.names[random_l]
+            row.appendChild(l_row)
+            const year_row = document.createElement('td')
+            year_row.innerText = random_year
+            row.appendChild(year_row)
+            const form_row = document.createElement('td')
+            form_row.innerText = random_year + 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'.substring(randomChar, randomChar+1)
+            row.appendChild(form_row)
+            const diet_row = document.createElement('td')
+            diet_row.innerText = random_diet == 1 ? "Yes" : "No"
+            row.appendChild(diet_row)
+
+        fillTable.appendChild(row)
+    }
+}
+studentGenerator(100)
 const popupTitle = document.getElementById("popup_title")
 const popupPreview = document.getElementById("preview")
 const initiatePopup = id => {
