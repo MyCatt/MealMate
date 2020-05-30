@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Michael Catterall</title>
+    <meta name="description" content="An HTML template for quick templating.">
+    <meta name="author" content="Michael Catterall">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body id='tracking'>
+    <nav id="primary_navigation">
+        <a href="index.html"><img src="assets/logo2x.png" id="logo"></a>
+        <ul id="primary_menu">
+            <a href="index.html">
+                <li>Home</li>
+            </a>
+            <a href="order.html">
+                <li class="active">Order</li>
+            </a>
+            <a href="index.html#home-contact-form">
+                <li>Support</li>
+            </a>
+            <a href="account.html">
+                <li>Account</li>
+            </a>
+            <li id="primary_menu--cart"><img id="cart_btn" src="./assets/icons/cart.svg">My Cart</li>
+        </ul>
+        <img src="assets/icons/burger.svg" id="hamburger" />
+    </nav>
+
+    <div id="mobile_banner">
+        <div id="mobile_banner-company">Food Group</div>
+        <div id="order_number">Order #39</div>
+    </div>
+    <div id="tracking_content_wrap">
+        <div id="tracking_status_section">
+            <h2>Order Details</h2>
+
+            <div id="tracking_progress">
+
+                <div id="status_line">
+                    <div id="line_fill"></div>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Order Sent</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Order Received</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Making Food</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Food Ready</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>In Transit (esta 3 hours)</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Delivered</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="comment_section">
+            <h3>Comments</h3>
+
+            <div class="comment_card">
+                <div class="comment_head">
+                    <p>Food Group</p>
+                    <p>3 mins ago</p>
+                </div>
+                <div class="comment_message">
+                    <p>Order delayed due to truck accident. ETA 3 hours, sorry...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
