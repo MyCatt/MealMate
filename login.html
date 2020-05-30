@@ -1,0 +1,57 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Michael Catterall</title>
+  <meta name="description" content="An HTML template for quick templating.">
+  <meta name="author" content="Michael Catterall">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.min.css?v=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet"> 
+  <style>
+    .button {
+        background: #6ABC6A;
+        border: 0;
+        color: #fff;
+        padding: 20px 40px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        cursor: pointer;
+        -webkit-transition: 0.3s -webkit-transform;
+        transition: 0.3s -webkit-transform;
+        transition: 0.3s transform;
+        transition: 0.3s transform, 0.3s -webkit-transform;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    </style>
+</head>
+<body>
+    <nav id="primary_navigation">
+        <a href="index.html"><img src="assets/logo2x.png" id="logo"></a>
+        <ul id="primary_menu">
+            <a href="index.html"><li>Home</li></a>
+            <a href="order.html"><li>Order</li></a>
+            <a href="index.html#home-contact-form"><li>Support</li></a>
+            <a href="account.html" ><li class="active">Account</li></a>
+        </ul>
+        <img src="assets/icons/burger.svg" id="hamburger"/>
+    </nav>
+    <div id = "home-content">
+        <div class="aligned-article">
+            <form onsubmit="e => e.preventDefault;">
+                <h3>Please enter your login details below:</h3>
+                <label for="login_form-email">Email</label>
+                <input type="email" placeholder="example@email.com" id="login_form-email">
+                <label for="login_form-password">Password</label>
+                <input type="password"placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;" id="login_form-email">
+            </form>
+            <a href="account.html"><button class="button">Log in</button></a>
+            
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
