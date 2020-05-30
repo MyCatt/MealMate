@@ -16,6 +16,15 @@ const largeTextSearch = document.getElementById('large_text_search') || undefine
 const fillTable = document.getElementById('list_table')
 const sideMenuButton = document.getElementById("show_menu") || undefined
 const sideMenu = document.getElementById("side_navigation") || undefined
+const popupTitle = document.getElementById("popup_title") || undefined
+const popupPreview = document.getElementById("preview") || undefined
+const cartContain = document.getElementById("item-wrap") || undefined
+
+const selectedDay = document.getElementById("day_select") || undefined
+
+
+
+
 const day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
 
 hamburger.addEventListener('click', e => {
@@ -24,6 +33,7 @@ hamburger.addEventListener('click', e => {
 
 const menu = {
     size: 5,
+    opened: undefined,
     meals: {
         0: {name: "Chicken salad with carrots and cucumber", thumb: "assets/cards/thumb/1.jpg"},
         1: {name: "Creamy pumpkin and chicken soup", thumb: "assets/cards/thumb/2.jpg"},
@@ -31,6 +41,14 @@ const menu = {
         3: {name: "Blueberry pancakes served with a juice box", thumb: "assets/cards/thumb/4.jpg"},
         4: {name: "Salted Salmon with salad", thumb: "assets/cards/thumb/5.jpg"}
     }
+}
+
+const initiatePopup = id => {
+    popupTitle.innerText = menu.meals[id].name
+    menu.opened = id
+    popupPreview.style.backgroundImage = `url(${menu.meals[id].thumb})`
+    mealPopup.style.display = "inline-block"
+    window.scrollTo(0, 0)
 }
 
 //        5: {name: "Big mac combo hold the lettuce", thumb: "assets/cards/thumb/6.jpg"},
@@ -85,6 +103,27 @@ if(mealPopupUnderlay && mealPopup) {
     }else {
         addCart.addEventListener('click', () => {
             cart.style.display = "inline-block"
+
+            const cart_item = document.createElement('div')
+            cart_item.classList.add('cart-item')
+            const meal_day = document.createElement('p')
+            meal_day.innerText = selectedDay.value
+            cart_item.appendChild(meal_day)
+
+            const meal_name = document.createElement('h4')
+            meal_name.innerText = menu.meals[menu.opened].name
+            cart_item.appendChild(meal_name)
+
+            const remove_btn = document.createElement('button')
+            remove_btn.innerText = "Remove"
+            cart_item.appendChild(remove_btn)
+
+            const edit_btn = document.createElement('button')
+            edit_btn.innerText = "Edit"
+            cart_item.appendChild(edit_btn)
+
+            
+            cartContain.appendChild(cart_item)
             mealPopup.style.display = "none"
         })
         openCart.addEventListener('click', () => {
@@ -220,12 +259,4 @@ if(document.getElementById('manage-history')) {  //Manage order history page
         }
     }
     orderGenerator(100)
-}
-const popupTitle = document.getElementById("popup_title")
-const popupPreview = document.getElementById("preview")
-const initiatePopup = id => {
-    popupTitle.innerText = menu.meals[id].name
-    popupPreview.style.backgroundImage = `url(${menu.meals[id].thumb})`
-    mealPopup.style.display = "inline-block"
-    window.scrollTo(0, 0)
 }
