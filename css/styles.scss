@@ -957,10 +957,18 @@ input[type="submit"] {
 }
 
 @keyframes changeStatus {
-    from {
+    0% {
         background: #f3f3f3;
+        transform: scale(1);
     }
-    to {
+    50% {
+        transform: scale(1.6);
+        -webkit-box-shadow: 0px 0px 44px 0px rgba(106,188,106,0.5);
+        -moz-box-shadow: 0px 0px 44px 0px rgba(106,188,106,0.5);
+        box-shadow: 0px 0px 44px 0px rgba(106,188,106,0.5);
+    }
+    100% {
+        transform: scale(1);
         background: $primary;
         -webkit-box-shadow: 0px 0px 22px 0px rgba(106,188,106,0.25);
         -moz-box-shadow: 0px 0px 22px 0px rgba(106,188,106,0.25);
