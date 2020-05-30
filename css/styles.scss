@@ -830,6 +830,143 @@ input[type="submit"] {
     }
 }
 
+#tracking {
+    width: 100%;
+    margin: 0;
+    background-color: #f5f5f5;
+    #mobile_banner{
+        background-color: $primary;
+        color: #fff;
+        display: inline-grid;
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        align-content: center;
+        width: 100%;
+        height: 60px;
+        margin: 0;
+        box-sizing: border-box;
+        padding: 0px $doc_padding;
+        #mobile_banner-company, #order_number{
+            font-size: 1.1em;
+            margin: 0;
+        }
+    }
+    #tracking_content_wrap {
+        box-sizing: border-box;
+        padding: 20px $doc_padding;
+    #tracking_status_section, #comment_section{
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        border-radius: 3px;
+        color: #000;
+        background-color: #fff;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        h2 {
+            padding: 0;
+            margin: 0;
+        }
+        #tracking_progress{
+            position: relative;
+            width: 100%;
+            margin: 10px 0;
+            display: inline-grid;
+            grid-template-columns: 1fr;
+            #status_line {
+                position: absolute;
+                width: 2px;
+                height: calc(100% - 20px);
+                background: #f3f3f3;
+                left: 9px;
+                top: 10px;
+                z-index: 0;
+                overflow: hidden;
+                #line_fill {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 2px;
+                    height: 0px;
+                    background: $primary;
+                    animation: fillLine 5.5s forwards;
+                    animation-delay: 1.6s;
+                    animation-timing-function: linear;
+                    -webkit-box-shadow: 0px 0px 22px 0px rgba(106,188,106,0.25);
+                    -moz-box-shadow: 0px 0px 22px 0px rgba(106,188,106,0.25);
+                    box-shadow: 0px 0px 22px 0px rgba(106,188,106,0.25);
+                }
+            }
+            .tracking_stage {
+                display: inline-grid;
+                grid-template-columns: 20px 1fr;
+                grid-column: 1 / span 2;
+                grid-gap: 20px;
+                padding: 10px 0;
+                .circle {
+                    height: 20px;
+                    width: 20px;
+                    background: #f3f3f3;
+                    border-radius: 10px;
+                    z-index: 10;
+                }
+
+                @for $i from 1 through 6{
+                    &:nth-child(#{$i}) .circle {
+                        animation: changeStatus 0.4s forwards;
+                        animation-delay: $i * 1s;
+                    }
+                }
+            
+                p {
+                    margin: 0;
+                    line-height: 20px;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+        .comment_card {
+            width: 100%;
+            .comment_head {
+                width: 100%;
+                display: inline-grid;
+                grid-template-columns: auto auto;
+                justify-content: space-between;
+                color: $primary;
+                p {
+                    margin: 0;
+                }
+            }
+            .comment_message {
+                font-size: 1rem;
+                margin: 0;
+            }
+        }
+    }
+    }
+}
+
+@keyframes fillLine {
+    from {
+        height: 0;
+    }
+    to {
+        height: 190px;
+    }
+}
+
+@keyframes changeStatus {
+    from {
+        background: #f3f3f3;
+    }
+    to {
+        background: $primary;
+        -webkit-box-shadow: 0px 0px 22px 0px rgba(106,188,106,0.25);
+        -moz-box-shadow: 0px 0px 22px 0px rgba(106,188,106,0.25);
+        box-shadow: 0px 0px 22px 0px rgba(106,188,106,0.25);
+    }
+}
 
 /* Now the fun part...responsive */
 
@@ -894,6 +1031,7 @@ input[type="submit"] {
             }
         }
     }
+
 }
 
 @media only screen and (max-width: 1100px) {
@@ -930,6 +1068,17 @@ input[type="submit"] {
         }
         to {
             left: 0;
+        }
+    }
+    #tracking {
+        #mobile_banner{
+            padding: 0px $doc_mid_padding;
+            #mobile_banner-company, #order_number{
+                font-size: 1em;
+            }
+        }
+        #tracking_content_wrap {
+            padding: 20px $doc_mid_padding;
         }
     }
 }
@@ -1029,6 +1178,17 @@ input[type="submit"] {
         }
         }
     }
+    #tracking {
+        #mobile_banner{
+            padding: 0px 20px;
+            #mobile_banner-company, #order_number{
+                font-size: 1em;
+            }
+        }
+        #tracking_content_wrap {
+            padding: 20px;
+        }
+    }
 }
 
 @media only screen and (max-width: 650px) {
@@ -1108,6 +1268,8 @@ input[type="submit"] {
             width: 80%;
         }
     }
+
+    
 }
 
 @keyframes slideNav {
@@ -1116,121 +1278,5 @@ input[type="submit"] {
     }
     to {
         transform: translateX(0%);
-    }
-}
-
-/*tracking page mobile*/
-$primary-background-color: #f5f5f5;
-
-#tracking{
-    width: 100vw;
-    margin: 0;
-    background-color: $primary-background-color;
-    .banner{
-        background-color: #6ABC6A;
-        color: #fcfcfc;
-        display: grid;
-        grid-template-columns: 30% 45% 25%;
-        align-items: center;
-        width: 100vw;
-        height: 7vh;
-        margin: 0;
-        
-        .title{
-            font-size: 17px;
-            margin: 0;
-            padding: 0 2px 0 2px;
-        }
-    }
-
-    $padding-left: 14px;
-    .status,.comment{
-        width: 80vw;
-        margin: 30px 10vw 20px 8vw;
-        border-radius: 5px;
-        color: black;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        padding-left: $padding-left;
-
-        .progress{
-            width: inherit;
-            margin: 10px 0 15px 0px;
-            display: flex;
-            flex-direction: column;
-
-            div{
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                p{
-                    margin-left: 20px;
-                }
-            }
-        }
-
-        .heading{
-            display: grid;
-            grid-template-columns: 30% 45% 25%;
-            justify-content: center;
-            align-content: center;;
-
-            p{
-                color: $primary;
-                text-align: left;
-            }
-        }
-
-        .message{
-            text-align: left;
-        }
-    }
-}
-
-/*tracking page bg=igger screen*/
-@media only screen and (min-width: 550px){
-    #tracking{
-        font-size: 19px;
-        .banner{
-            height: 17vh;
-            
-            .title,.order-number{
-                font-size: 50px;
-            }
-        }
-
-        .status,.comment{
-            width: 20%;
-            margin-left: 40%;
-            margin-right: 40%;
-            align-items: left;
-            justify-content: center;
-            border-radius: 10px;
-        }
-
-        .progress{
-            div{
-                width: 100%;
-                
-                display: flex;
-                flex-direction: row;
-                flex-wrap: $primary;
-                cursor: pointer;
-                border: 1px solid #000;
-            }
-            div:hover{
-                p{
-                    color: $primary;
-                }
-            }
-        }
-
-        .comment{
-            margin-bottom: 60px;
-        }
     }
 }

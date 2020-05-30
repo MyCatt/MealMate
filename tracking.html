@@ -10,8 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
 </head>
 
 <body id='tracking'>
@@ -34,64 +32,67 @@
         </ul>
         <img src="assets/icons/burger.svg" id="hamburger" />
     </nav>
-    <div class="banner">
-        <div class="title">Food Group</div>
-        <div class="space"></div>
-        <div class="order-number">Order #39</div>
+
+    <div id="mobile_banner">
+        <div id="mobile_banner-company">Food Group</div>
+        <div id="order_number">Order #39</div>
     </div>
+    <div id="tracking_content_wrap">
+        <div id="tracking_status_section">
+            <h2>Order Details</h2>
 
-    <div class="status">
-        <h2>Order Details</h2>
+            <div id="tracking_progress">
 
-        <div class="progress">
-            <div class='current'>
-                <i class="far fa-circle"></i>
-                <p>Order Sent</p>
+                <div id="status_line">
+                    <div id="line_fill"></div>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Order Sent</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Order Received</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Making Food</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Food Ready</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>In Transit (esta 3 hours)</p>
+                </div>
+
+                <div class='tracking_stage'>
+                    <i class="circle"></i>
+                    <p>Delivered</p>
+                </div>
             </div>
+        </div>
 
-            <div>
-                <i class="far fa-circle"></i>
-                <p>Order Received</p>
-            </div>
+        <div id="comment_section">
+            <h3>Comments</h3>
 
-            <div>
-                <i class="far fa-circle"></i>
-                <p>Making Food</p>
-            </div>
-
-            <div>
-                <i class="far fa-circle"></i>
-                <p>Food Ready</p>
-            </div>
-
-            <div>
-                <i class="far fa-circle"></i>
-                <p>In Transit (esta 3 hours)</p>
-            </div>
-
-            <div>
-                <i class="far fa-circle"></i>
-                <p>Delivered</p>
+            <div class="comment_card">
+                <div class="comment_head">
+                    <p>Food Group</p>
+                    <p>3 mins ago</p>
+                </div>
+                <div class="comment_message">
+                    <p>Order delayed due to truck accident. ETA 3 hours, sorry...</p>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="comment">
-        <h3>Comments</h3>
-
-        <div class="notice">
-            <div class="heading">
-                <p>Food Group</p>
-                <div class='space'></div>
-                <p>3 mins ago</p>
-            </div>
-
-            <div class="message">
-                <p>Order delayed due to truck accident. ETA 3 hours, sorry...</p>
-            </div>
-        </div>
-    </div>
-
     <script src="js/scripts.js"></script>
 </body>
 
