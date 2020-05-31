@@ -301,6 +301,7 @@ input[type="submit"] {
         height: 100%;
         padding: 25px;
         box-sizing: border-box;
+        overflow-y: hidden;
         #student_list {
             background: #fff;
             border-radius: 4px;
@@ -308,6 +309,7 @@ input[type="submit"] {
             height: 100%;
             box-sizing: border-box;
             padding: 20px;
+            overflow-y: auto;
             #smart_filter {
                 width: 100%;
                 display: grid;
@@ -339,6 +341,7 @@ input[type="submit"] {
             #table_wrap {
                 max-width: 100%;
                 overflow-x: auto;
+                overflow-y: auto;
             #list_table {
                 width: 100%;
                 text-align: left;
