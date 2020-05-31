@@ -19,8 +19,21 @@ const sideMenu = document.getElementById("side_navigation") || undefined
 const popupTitle = document.getElementById("popup_title") || undefined
 const popupPreview = document.getElementById("preview") || undefined
 const cartContain = document.getElementById("item-wrap") || undefined
+const chatOpen = document.getElementById("chat_tab") || undefined
+const chatWindow = document.getElementById("chat_window") || undefined
+const exitChat = document.getElementById("exit_chat") || undefined
 
 const selectedDay = document.getElementById("day_select") || undefined
+
+chatOpen.addEventListener('click', () => {
+    chatWindow.style.display = "inline-flex"
+    chatOpen.style.display = "none"
+})
+
+exitChat.addEventListener('click', () => {
+    chatWindow.style.display = "none"
+    chatOpen.style.display = "inline-grid"
+})
 
 
 
