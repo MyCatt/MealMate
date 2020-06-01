@@ -312,7 +312,7 @@ if(document.getElementById('meal-history')) {  //Manage meal history page
     const searchTable = param => {
         const trChildren = fillTable.getElementsByTagName("tr");
         for (let i = 0; i < trChildren.length; i++) {
-            const tdChildren = trChildren[i].getElementsByTagName("td")[1];
+            const tdChildren = trChildren[i].getElementsByTagName("td")[0];
             if (tdChildren) {
             const tdValue = tdChildren.textContent || tdChildren.innerText;
             if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
