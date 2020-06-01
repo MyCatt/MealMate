@@ -342,6 +342,14 @@ input[type="submit"] {
                 max-width: 100%;
                 overflow-x: auto;
                 overflow-y: auto;
+                    button {
+                        color: inherit;
+                        border: 0;
+                        background: none;
+                        padding: 15px;
+                        border-radius: 3px;
+                    }
+
             #list_table {
                 width: 100%;
                 text-align: left;
@@ -355,6 +363,19 @@ input[type="submit"] {
                     td, th {
                         padding: 0 15px;
                         text-align: left;
+                    }
+                    &:hover {
+                        background:#67C99F;
+                        color: #fff;
+                        cursor: pointer;
+                    }
+                    &:nth-child(1) {
+                        background: $primary;
+                        color: #fff;
+                        &:hover {
+                            background: $primary;
+                            color: #fff;
+                        }
                     }
                 }
 

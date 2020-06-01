@@ -218,6 +218,19 @@ if(document.getElementById('manage')) {  //Manage page
                 diet_row.innerText = random_diet == 1 ? "Yes" : "No"
                 row.appendChild(diet_row)
 
+                const account = document.createElement('td')
+                account.style.width = '150px'
+                const accountBtn = document.createElement('button')
+                accountBtn.innerText = "Account Settings"
+                accountBtn.addEventListener('click', () => {
+                    window.open(
+                        'account.html',
+                        '_blank' // <- This is what makes it open in a new window.
+                    )
+                })
+                account.appendChild(accountBtn)
+                row.appendChild(account)
+
             fillTable.appendChild(row)
         }
     }
@@ -228,7 +241,7 @@ if(document.getElementById('manage-history')) {  //Manage order history page
     const searchTable = param => {
         const trChildren = fillTable.getElementsByTagName("tr");
         for (let i = 0; i < trChildren.length; i++) {
-            const tdChildren = trChildren[i].getElementsByTagName("td")[0];
+            const tdChildren = trChildren[i].getElementsByTagName("td")[1];
             if (tdChildren) {
             const tdValue = tdChildren.textContent || tdChildren.innerText;
             if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
@@ -270,6 +283,88 @@ if(document.getElementById('manage-history')) {  //Manage order history page
                 const date_row = document.createElement('td')
                 date_row.innerText = random_date
                 row.appendChild(date_row)
+
+                const mealid_row = document.createElement('td')
+                mealid_row.innerText = order_number % 32
+                row.appendChild(mealid_row)
+
+                const tracking = document.createElement('td')
+                tracking.style.width = '150px'
+                const trackingBtn = document.createElement('button')
+                trackingBtn.innerText = "Tracking Link"
+                trackingBtn.addEventListener('click', () => {
+                    window.open(
+                        'tracking.html',
+                        '_blank' // <- This is what makes it open in a new window.
+                    )
+                })
+                tracking.appendChild(trackingBtn)
+                row.appendChild(tracking)
+
+            fillTable.appendChild(row)
+        }
+    }
+    orderGenerator(100)
+}
+
+
+if(document.getElementById('meal-history')) {  //Manage meal history page
+    const searchTable = param => {
+        const trChildren = fillTable.getElementsByTagName("tr");
+        for (let i = 0; i < trChildren.length; i++) {
+            const tdChildren = trChildren[i].getElementsByTagName("td")[1];
+            if (tdChildren) {
+            const tdValue = tdChildren.textContent || tdChildren.innerText;
+            if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
+                trChildren[i].style.display = "";
+            } else {
+                trChildren[i].style.display = "none";
+            }
+            }
+        }
+    }
+    largeTextSearch.addEventListener('keyup', e => {
+        searchTable(e.target.value)
+    })
+
+    const orderGenerator = quantity => {
+        const mockData = {
+            names: [
+                "Apple", "Cake", "Muffin", "Sandwich", "Wrap",
+                "Lemon", "Steak", "Sausage", "Chicken", "Soup", "Pea",
+                "Orange", "Avacado", "Human Meat", "Grandma", "Pork", "Apricot",
+                "Kebab", "Juice Box", "Fish", "Stew", "Chips", "Grape",
+                "Kumara", "Salad", "Tomato", "Lettuce", "Dressing", "Pumpkin",
+                "Salt", "Pepper", "Biscuit", "Choc", "Burger", "Vegetarian"
+            ]
+        }
+        for(let i = 0; i < quantity; i++) {
+            const order_number = Math.floor(Math.random() * 1000)
+            const random_student = mockData.names[Math.floor(Math.random() * 35)] + " " + mockData.names[Math.floor(Math.random() * 35)]
+            const random_date = new Date(+(new Date()) - Math.floor(Math.random()*10000000000)).toLocaleDateString()
+
+            const row = document.createElement('tr')
+                const order_row = document.createElement('td')
+                order_row.innerText = order_number
+                row.appendChild(order_row)
+                const name_row = document.createElement('td')
+                name_row.innerText = random_student
+                row.appendChild(name_row)
+                const date_row = document.createElement('td')
+                date_row.innerText = mockData.names[Math.floor(Math.random() * 35)] + ", " +
+                                     mockData.names[Math.floor(Math.random() * 35)] + ", " +
+                                     mockData.names[Math.floor(Math.random() * 35)] + ", " +
+                                     mockData.names[Math.floor(Math.random() * 35)] + ", " +
+                                     mockData.names[Math.floor(Math.random() * 35)] + ", " +
+                                     mockData.names[Math.floor(Math.random() * 35)] + ", " +
+                                     mockData.names[Math.floor(Math.random() * 35)] + ", " +
+                                     mockData.names[Math.floor(Math.random() * 35)] + ", " +
+                                     mockData.names[Math.floor(Math.random() * 35)]
+                row.appendChild(date_row)
+
+                const vege_row = document.createElement('td')
+                vege_row.innerText = order_number % 2 == 0 ? "Yes" : "No"
+                row.appendChild(vege_row)
 
             fillTable.appendChild(row)
         }
