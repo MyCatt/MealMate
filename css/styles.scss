@@ -1199,6 +1199,7 @@ input[type="submit"] {
         position: fixed;
         left: 0;
         top: 0;
+        z-index: 1000;
         width: 300px !important;
         border-right: 1px solid #f3f3f3;
         animation: slideOutSide 0.4s forwards;

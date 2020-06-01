@@ -25,16 +25,19 @@ const exitChat = document.getElementById("exit_chat") || undefined
 
 const selectedDay = document.getElementById("day_select") || undefined
 
-chatOpen.addEventListener('click', () => {
-    chatWindow.style.display = "inline-flex"
-    chatOpen.style.display = "none"
-})
+if(chatOpen != undefined) {
 
-exitChat.addEventListener('click', () => {
-    chatWindow.style.display = "none"
-    chatOpen.style.display = "inline-grid"
-})
+    chatOpen.addEventListener('click', () => {
+        chatWindow.style.display = "inline-flex"
+        chatOpen.style.display = "none"
+    })
 
+    exitChat.addEventListener('click', () => {
+        chatWindow.style.display = "none"
+        chatOpen.style.display = "inline-grid"
+    })
+
+}
 
 
 
