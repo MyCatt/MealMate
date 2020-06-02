@@ -202,6 +202,9 @@ if(document.getElementById('manage')) {  //Manage page
             const randomChar = Math.floor(Math.random() * 26)
 
             const row = document.createElement('tr')
+                    const id_row = document.createElement('td')
+                    id_row.innerText = Math.floor(Math.random() * 44540723)
+                    row.appendChild(id_row)
                 const f_row = document.createElement('td')
                 f_row.innerText = mockData.names[random_f]
                 row.appendChild(f_row)

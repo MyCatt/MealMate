@@ -25,7 +25,7 @@
     <section id="account-form">
         <form onsubmit=" e => e.preventDefault;">
             <h1>Account Settings</h1>
-            <p>* marks required fields</p>
+            <p>* required fields</p>
 
             <hr>
             <h3>Student</h3>
@@ -56,8 +56,12 @@
             <input type="phone" value="0220665816" id="contact_form-school">
 
             <hr>
-            <h3>The child connected to this account wishes to participate in the free lunch program and has my approval</h3>
-            <input type="checkbox" checked>
+            <div style="width: 100%; padding: 20px 0; display: inline-grid; grid-template-columns: 50px 1fr; justify-content: space-between; text-align: left;">
+                <input id="check" type="checkbox" checked style="width: auto; height: 10px; margin: 0;">
+                <p style="padding: 0; margin: 0;">
+                    The child connected to this account wishes to participate in the free lunch program and has my approval
+                 </p>
+            </div>
             <label>Signature</label>
             <input type="text" placeholder="Peter Phillips">
 
