@@ -24,8 +24,20 @@ const chatWindow = document.getElementById("chat_window") || undefined
 const exitChat = document.getElementById("exit_chat") || undefined
 const submitMsg = document.getElementById("submit_msg") || undefined
 const msgInput = document.getElementById("chat_input") || undefined
+const accountForm = document.getElementById("account_edit_form") || undefined
+
 
 const selectedDay = document.getElementById("day_select") || undefined
+
+if(accountForm != undefined) {
+    accountForm.addEventListener('submit', e => {
+        e.preventDefault();
+        order_confirmation_wrap.style.display = "table"
+    })
+    document.getElementById('review_order_btn').addEventListener('click', () => {
+        order_confirmation_wrap.style.display = "none"
+    })
+}
 
 if(chatOpen != undefined) {
 

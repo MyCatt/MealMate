@@ -23,7 +23,19 @@
     </nav>
 
     <section id="account-form">
-        <form onsubmit=" e => e.preventDefault;">
+        <div id="order_confirmation_wrap">
+            <div id="order_confirmation">
+                <div id="confirmation">
+                    <img id="choice-img" src="./assets/choice.png"/>
+                    <div id="confirm_text">
+                        <h1>ALL DONE, DUDE!</h1>
+                        <p>Your account changes have been updated!</p>
+                        <button id="review_order_btn">Thanks</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <form id="account_edit_form" >
             <h1>Account Settings</h1>
             <p>* required fields</p>
 
