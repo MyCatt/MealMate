@@ -12,6 +12,34 @@
 </head>
 <body>
     <div id="meal-history"></div>
+    <div id="live_chat">
+        <div id="chat_tab">
+            <p>Food Corpe (Online)</p>
+            <button id="open_chat_window"></button>
+        </div>
+        <div id="chat_window">
+            <div id="chat_bar">
+                <p>Food Corpe (Online)</p>
+                <button id="exit_chat"></button>
+            </div>
+            <div id="chat_content">
+                <div class="message self">
+                    <div class="message_child">
+                        Hello!
+                    </div>
+                </div>
+                <div class="message else">
+                    <div class="message_child">
+                        Hello, can you tell me the eta on order #503?
+                    </div>
+                </div>
+            </div>
+            <div id="chat_controls">
+                <input type="text" placeholder="Message"/>
+                <button>Send</button>
+            </div>
+        </div>
+    </div>
     <button id="show_menu">Menu</button>
     <div id="management">
         <nav id="side_navigation">
@@ -26,7 +54,7 @@
         <main id="main_content">
             <div id="student_list">
                 <div id="smart_filter">
-                    <input type="text" id="large_text_search" placeholder="Search student" value=""/>
+                    <input type="text" id="large_text_search" placeholder="Search meal ID" value=""/>
                     <button>Create Order</button>
                 </div>
                 <div id="table_wrap">

@@ -23,42 +23,52 @@
     </nav>
 
     <section id="account-form">
-        <form onsubmit="e => e.preventDefault;">
+        <form onsubmit=" e => e.preventDefault;">
             <h1>Account Settings</h1>
+            <p>* required fields</p>
 
             <hr>
             <h3>Student</h3>
-            <label for="contact_form-name">First Name</label>
-            <input type="text" value="Michael" id="contact_form-name">
+            <label for="contact_form-name">First Name *</label>
+            <input type="text" value="Michael" id="contact_form-name" required>
 
-            <label for="contact_form-email">Last Name</label>
-            <input type="tex" value="Catterall" id="contact_form-email">
+            <label for="contact_form-email">Last Name *</label>
+            <input type="tex" value="Catterall" id="contact_form-email" required>
 
-            <label for="contact_form-school">Email</label>
-            <input type="email" value="hey@michaelcatterall.co.nz" id="contact_form-school">
+            <label for="contact_form-school">Email *</label>
+            <input type="email" value="hey@michaelcatterall.co.nz" id="contact_form-school" required>
 
-            <label for="contact_form-school">School</label>
-            <input type="text" value="Takapuna Grammar School" id="contact_form-school">
+            <label for="contact_form-school">School *</label>
+            <input type="text" value="Takapuna Grammar School" id="contact_form-school" required>
             <hr>
             <h3>Legal Guardian</h3>
 
-            <label for="contact_form-name">First Name</label>
-            <input type="text" value="Michael" id="contact_form-name">
+            <label for="contact_form-name">First Name *</label>
+            <input type="text" value="Michael" id="contact_form-name" required>
 
-            <label for="contact_form-email">Last Name</label>
-            <input type="text" value="Catterall" id="contact_form-email">
+            <label for="contact_form-email">Last Name *</label>
+            <input type="text" value="Catterall" id="contact_form-email" required>
 
-            <label for="contact_form-school">Email</label>
-            <input type="email" value="hey@michaelcatterall.co.nz" id="contact_form-school">
+            <label for="contact_form-school">Email *</label>
+            <input type="email" value="hey@michaelcatterall.co.nz" id="contact_form-school"required>
 
             <label for="contact_form-school">Contact Number</label>
             <input type="phone" value="0220665816" id="contact_form-school">
 
             <hr>
-            <h3>Dietry Requirement</h3>
+            <div style="width: 100%; padding: 20px 0; display: inline-grid; grid-template-columns: 50px 1fr; justify-content: space-between; text-align: left;">
+                <input id="check" type="checkbox" checked style="width: auto; height: 10px; margin: 0;">
+                <p style="padding: 0; margin: 0;">
+                    The child connected to this account wishes to participate in the free lunch program and has my approval
+                 </p>
+            </div>
+            <label>Signature</label>
+            <input type="text" placeholder="Peter Phillips">
+
+            <h3>Dietary Requirements</h3>
 
             <label for="contact_form-message">Requirement/Restrictions</label>
-            <textarea id="contact_form-message"></textarea><br/>
+            <textarea id="contact_form-message" placeholder="Allergic to peanuts, dairy intolerant..."></textarea><br/>
 
             <button id="save_details">Save</button>
 

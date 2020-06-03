@@ -202,6 +202,9 @@ if(document.getElementById('manage')) {  //Manage page
             const randomChar = Math.floor(Math.random() * 26)
 
             const row = document.createElement('tr')
+                    const id_row = document.createElement('td')
+                    id_row.innerText = Math.floor(Math.random() * 44540723)
+                    row.appendChild(id_row)
                 const f_row = document.createElement('td')
                 f_row.innerText = mockData.names[random_f]
                 row.appendChild(f_row)
@@ -312,7 +315,7 @@ if(document.getElementById('meal-history')) {  //Manage meal history page
     const searchTable = param => {
         const trChildren = fillTable.getElementsByTagName("tr");
         for (let i = 0; i < trChildren.length; i++) {
-            const tdChildren = trChildren[i].getElementsByTagName("td")[1];
+            const tdChildren = trChildren[i].getElementsByTagName("td")[0];
             if (tdChildren) {
             const tdValue = tdChildren.textContent || tdChildren.innerText;
             if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
