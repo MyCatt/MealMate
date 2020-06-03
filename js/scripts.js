@@ -22,6 +22,8 @@ const cartContain = document.getElementById("item-wrap") || undefined
 const chatOpen = document.getElementById("chat_tab") || undefined
 const chatWindow = document.getElementById("chat_window") || undefined
 const exitChat = document.getElementById("exit_chat") || undefined
+const submitMsg = document.getElementById("submit_msg") || undefined
+const msgInput = document.getElementById("chat_input") || undefined
 
 const selectedDay = document.getElementById("day_select") || undefined
 
@@ -35,6 +37,16 @@ if(chatOpen != undefined) {
     exitChat.addEventListener('click', () => {
         chatWindow.style.display = "none"
         chatOpen.style.display = "inline-grid"
+    })
+
+    submitMsg.addEventListener('click', () => {
+        const message = document.createElement('div')
+        message.className = "message self"
+        const message_body = document.createElement('div')
+        message_body.className = "message_child"
+        message_body.innerText = msgInput.value
+        message.appendChild(message_body)
+        document.getElementById("chat_content").appendChild(message)
     })
 
 }

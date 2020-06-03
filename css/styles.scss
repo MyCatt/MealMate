@@ -219,10 +219,12 @@ input[type="submit"] {
             flex: 1;
             box-sizing: border-box;
             padding: 20px;
+            overflow-y: auto;
             .message {
                 display: inline-block;
                 width: 100%;
                 text-align: left;
+                padding: 5px 0;
                 .message_child {
                     display: inline-block;
                     color: #fff;
