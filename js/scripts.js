@@ -183,10 +183,10 @@ if(mealPopupUnderlay && mealPopup) {
 
 if(document.getElementById('manage')) {  //Manage page
 
-    const searchTable = param => {
+    const searchStudentTable = param => {
         const trChildren = fillTable.getElementsByTagName("tr");
         for (let i = 0; i < trChildren.length; i++) {
-            const tdChildren = trChildren[i].getElementsByTagName("td")[0];
+            const tdChildren = trChildren[i].getElementsByTagName("td")[1];
             if (tdChildren) {
             const tdValue = tdChildren.textContent || tdChildren.innerText;
             if (tdValue.toUpperCase().indexOf(param.toUpperCase()) > -1) {
@@ -203,7 +203,7 @@ if(document.getElementById('manage')) {  //Manage page
     })
 
     largeTextSearch.addEventListener('keyup', e => {
-        searchTable(e.target.value)
+        searchStudentTable(e.target.value)
     })
 
     const studentGenerator = quantity => {
