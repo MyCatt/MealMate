@@ -1,0 +1,92 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Michael Catterall</title>
+    <meta name="description" content="An HTML template for quick templating.">
+    <meta name="author" content="Michael Catterall">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+        integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V" crossorigin="anonymous" />
+</head>
+
+<body id='caterer-tracking'>
+    <nav id="primary_navigation">
+        <a href="index.html"><img src="assets/logo2x.png" id="logo"></a>
+        <ul id="primary_menu">
+            <a href="index.html">
+                <li>Home</li>
+            </a>
+            <a href="order.html">
+                <li class="active">Order</li>
+            </a>
+            <a href="index.html#home-contact-form">
+                <li>Support</li>
+            </a>
+            <a href="account.html">
+                <li>Account</li>
+            </a>
+            <li id="primary_menu--cart"><img id="cart_btn" src="./assets/icons/cart.svg">My Cart</li>
+        </ul>
+        <img src="assets/icons/burger.svg" id="hamburger" />
+    </nav>
+    <div class="banner">
+        <div class="small-title">Food Group</div>
+        <div class="title">ORDER TRACKING</div>
+    </div>
+
+    <div class="card">
+        <div class="heading">
+            <div class="order-number">ORDER #56</div>
+            <div class="space"></div>
+            <div class="school-name">VAUXHALL PRIMARY</div>
+        </div>
+
+        <div class="status">
+            <div class="current" id='current'>
+                <i class="fas fa-angle-up"></i>
+                <p>CURRENT STATUS...</p>
+            </div>
+            <div class="options" id='options'>
+                <div>PREPARING</div>
+                <div>READY FOR TRANSIT</div>
+                <div>IN TRASIT</div>
+            </div>
+        </div>
+
+
+        <div class="comment">
+            <h3>Comments</h3>
+            <div class="heading">
+                <p>Food Group</p>
+                <div class='space'></div>
+                <p>3 mins ago</p>
+            </div>
+            <textarea type="text" class="message"
+                placeholder="Order delayed due to truck accident. ETA 3 hours, sorry..."></textarea>
+            <div class="btn-container">
+                <a href="#" class='button'>UPDATE</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script>
+        var options = document.getElementById('options').querySelectorAll('div');
+        var currentStatus = document.getElementById('current').querySelector('p');
+        for (let i = 0; i < options.length; i++) {
+            options.item(i).addEventListener('click', (e) => {
+                e.preventDefault();
+                options.item(i).style.color = 'white';
+                options.item(i).style.backgroundColor = '#6ABC6A';
+                currentStatus.innerHTML = options.item(i).innerHTML;
+            });
+        }
+    </script>
+</body>
+
+</html>

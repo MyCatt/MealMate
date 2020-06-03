@@ -11,6 +11,7 @@ $doc_padding: 20vw;
 $doc_mid_plus_padding: 15vw;
 $doc_mid_padding: 10vw;
 $doc_mobile_padding: 20px;
+$primary-background-color: rgb(248, 248, 248);
 
 html {
     touch-action: manipulation;
@@ -1454,3 +1455,291 @@ input[type="submit"] {
         transform: translateX(0%);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/*tracking page mobile*/
+#tracking{
+    width: 100vw;
+    margin: 0;
+    background-color: $primary-background-color;
+    .banner{
+        background-color: #6ABC6A;
+        color: #fcfcfc;
+        display: grid;
+        grid-template-columns: 30% 45% 25%;
+        align-items: center;
+        width: 100vw;
+        height: 7vh;
+        margin: 0;
+        
+        .title{
+            font-size: 17px;
+            margin: 0;
+            padding: 0 2px 0 2px;
+        }
+    }
+
+    $padding-left: 14px;
+    .status,.comment{
+        width: 80vw;
+        margin: 30px 10vw 20px 8vw;
+        border-radius: 5px;
+        color: black;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        padding-left: $padding-left;
+
+        .progress{
+            width: inherit;
+            margin: 10px 0 15px 0px;
+            display: flex;
+            flex-direction: column;
+
+            div{
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                p{
+                    margin-left: 20px;
+                }
+            }
+        }
+
+        .heading{
+            display: grid;
+            grid-template-columns: 30% 45% 25%;
+            justify-content: center;
+            align-content: center;;
+
+            p{
+                color: $primary;
+                text-align: left;
+            }
+        }
+
+        .message{
+            text-align: left;
+        }
+    }
+}
+
+/*tracking page bg=igger screen*/
+@media only screen and (min-width: 550px){
+    #tracking{
+        font-size: 19px;
+        .banner{
+            height: 17vh;
+            
+            .title,.order-number{
+                font-size: 50px;
+            }
+        }
+
+        .status,.comment{
+            width: 20%;
+            margin-left: 40%;
+            margin-right: 40%;
+            align-items: left;
+            justify-content: center;
+            border-radius: 10px;
+        }
+
+        .progress{
+            div{
+                width: 100%;
+                
+                display: flex;
+                flex-direction: row;
+                flex-wrap: $primary;
+                cursor: pointer;
+                border: 1px solid #000;
+            }
+            div:hover{
+                p{
+                    color: $primary;
+                }
+            }
+        }
+
+        .comment{
+            margin-bottom: 60px;
+        }
+    }
+}
+
+#caterer-tracking{
+    background-color: $primary-background-color;
+    .banner{
+        background-color: $primary;
+        color: white;
+        width: 60%;
+        height: 17vh;
+        border-radius: 10px;
+        margin: 30px 20% 30px 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+        text-align: left;
+
+        div{
+            margin: 25px 0 15px 65px;
+        }
+
+        .small-title{
+            font-size: 20px;
+        }
+
+        .title{
+            font-size: 36px;
+        }
+    }
+
+    .card{
+        background-color: white;
+        border-radius: 10px;
+        width: 20%;
+        height: 60vh;
+        margin: 10px 40% 10px 40%;
+
+        .heading{
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 25% 40% 35%;
+            text-align: center;
+
+            .order-number{
+                color: $primary;
+            }
+        }
+
+        .status{
+            background-color: $primary-background-color;
+            margin: 20px 15px 40px 15px;
+            border-radius: 10px;
+            font-weight: 700;
+
+            .options{
+                div:hover{
+                    background-color: $primary;
+                    color: white;
+                    cursor: pointer;
+                    font-weight: 700;
+                }
+            }
+
+            .current{
+                /*
+                background-color: $primary;
+                color: white;
+                */
+                display: flex;
+                flex-direction: row;
+                padding: 0 10px 0 10px;
+
+                p{
+                    padding-left: 18px;
+                }
+
+                i{
+                    padding-top: 10px;
+                    padding-left: 10px;
+                    
+                }
+            }
+
+            div{
+                padding: 15px;
+                color: grey;
+            }
+        }
+
+        .comment{
+            h3{
+                color: black;
+                padding-left: 20px;;
+            }
+            .heading{
+                display: grid;
+                grid-template-columns: 35% 35% 30%;
+                padding: 0;
+                margin: 10px 5% 10px 5%;
+            }
+            
+            .message{
+                margin: 0;
+                padding: 8px 7px 8px 7px;
+                width: 90%;
+                height: 55px;
+                margin: 10px 5% 10px 5%;
+                border-radius: 10px;
+                border: $primary 2px solid;
+            }
+
+            .btn-container{
+                margin: 30px 5% 30px 5%;
+
+                .button{
+                    color: #fff;
+                    width: 40%;
+                    padding: 15px 20px 15px 20px;
+                    margin-left: 30%;
+                    margin-right: 30%;
+                    margin-top: 20px;
+                    margin-bottom: 40px;
+                    border-radius: 30px;
+                    border: $primary 2px solid;
+                    background-color: $primary;
+                    text-align: center;
+                    
+                }
+                .button:hover{
+                    background-color: #fff;
+                    color: $primary;
+                    font-weight: 800;
+                }
+            }        
+        }
+    }
+}
+
+
+@media only screen and (max-width: 940px){
+    #caterer-tracking{
+        .banner{
+            width: 90%;
+            margin: 20px 5% 20px 5%;
+            height: 13vh;
+
+            .small-title{
+                padding: 15px 0 10px 15px;
+                margin: 0;
+            }
+
+            .title{
+                margin: 0;
+                padding: 10px 0 10px 15px;
+                font-size: 30px;
+            }
+        }
+
+        .card{
+            width: 90%;
+            margin: 20px 5% 20px 5%;
+            height: 65vh;
+        }
+    }
+}
+
