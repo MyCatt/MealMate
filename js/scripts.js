@@ -25,6 +25,8 @@ const exitChat = document.getElementById("exit_chat") || undefined
 const submitMsg = document.getElementById("submit_msg") || undefined
 const msgInput = document.getElementById("chat_input") || undefined
 const accountForm = document.getElementById("account_edit_form") || undefined
+const switchBtn = document.getElementById("switch_btn") || undefined
+const removeMealBtn = document.getElementById("remove_btn") || undefined
 
 
 const selectedDay = document.getElementById("day_select") || undefined
@@ -100,7 +102,14 @@ if(mealPopupUnderlay && mealPopup) {
     exitExpanded.addEventListener('click', e => {
         mealPopup.style.display = "none"
     })
-
+    if(switchBtn) {
+        switchBtn.addEventListener("click", () => {
+            mealPopup.style.display = "none"
+        })
+        removeMealBtn.addEventListener("click", () => {
+            mealPopup.style.display = "none"
+        })
+    }
     Object.keys(menu.meals).map((key, index) => {
         const components = menu.meals[index]
         const orderCard = document.createElement('div')
